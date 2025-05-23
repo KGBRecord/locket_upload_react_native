@@ -4,7 +4,7 @@ import {VERSION_SKIP_CODEPUSH} from './constrain';
 
 export const checkUpdateApk = async () => {
   const response = await axios.get(
-    'https://api.github.com/repos/quockhanh2004/locket_upload_react_native/releases/latest',
+    'https://api.github.com/repos/KGBRecord/locket_upload_react_native/releases/latest',
   );
   const latestVersion = response.data.tag_name;
   const latestVersionNumber = latestVersion.replace('v', '');

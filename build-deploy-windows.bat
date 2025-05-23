@@ -33,7 +33,7 @@ if errorlevel 1 (
 )
 cd ..
 
-:: Đổi tên file APK
+:: ĝổi tên file APK
 set APK_PATH=android\app\build\outputs\apk\release\app-release.apk
 set NEW_APK_PATH=android\app\build\outputs\apk\release\locket_upload_%CURRENT_TIME%.apk
 
@@ -47,7 +47,7 @@ move "%APK_PATH%" "%NEW_APK_PATH%"
 :: Cài APK lên thiết bị (nếu có)
 adb install "%NEW_APK_PATH%"
 if errorlevel 1 (
-  echo ⚠️  Cảnh báo: Cài đặt APK thất bại, nhưng vẫn tiếp tục...
+  echo ⚠︝  Cảnh báo: Cài đặt APK thất bại, nhưng vẫn tiếp tục...
 )
 
 :: Commit và push
@@ -77,12 +77,12 @@ if not defined RELEASE_ID (
     exit /b 1
   )
 ) else (
-  echo 🔁 Cập nhật release đã tồn tại...
+  echo 🔝 Cập nhật release đã tồn tại...
   gh release update "v%VERSION%" --notes "%RELEASE_NOTES%"
   gh release upload "v%VERSION%" "%NEW_APK_PATH%" --clobber
 )
 
-:: Hỏi gửi FCM
+:: Hời gửi FCM
 set /p SEND_FCM="Bạn có muốn gửi thông báo qua FCM không? (y/n): "
 if /i "%SEND_FCM%"=="y" (
   for /f "delims=" %%i in ('node -p "require('./google-services.json').project_info.project_id"') do set PROJECT_ID=%%i
@@ -100,11 +100,11 @@ if /i "%SEND_FCM%"=="y" (
              \"restricted_package_name\": \"com.locket_upload\"^
            },^
            \"data\": {^
-             \"update_url\": \"https://github.com/quockhanh2004/locket_upload_react_native/releases\"^
+             \"update_url\": \"https://github.com/KGBRecord/locket_upload_react_native/releases\"^
            },^
            \"notification\": {^
              \"body\": \"Cần cập nhật qua apk, nhấn vào để kiểm tra nhé!\",^
-             \"title\": \"Đã có bản cập nhật mới!\"^
+             \"title\": \"ĝã có bản cập nhật mới!\"^
            },^
            \"topic\": \"new_update\"^
          }^
@@ -114,9 +114,9 @@ if /i "%SEND_FCM%"=="y" (
     echo ❌ Lỗi: Gửi thông báo FCM thất bại!
     exit /b 1
   )
-  echo ✅ Đã gửi thông báo FCM thành công!
+  echo ✅ ĝã gửi thông báo FCM thành công!
 ) else (
-  echo 🚫 Bỏ qua việc gửi thông báo FCM.
+  echo 🚫 Bờ qua việc gửi thông báo FCM.
 )
 
 echo 🎉 Build hoàn tất thành công!

@@ -68,7 +68,7 @@ const RootNavigation = () => {
         {isLoggedIn.user ? <HomeNavigator /> : <AuthNavigator />}
       </NavigationContainer>
       <MessageDialog />
-      <DonateDialog />
+      {/* <DonateDialog /> */}
       <AutoCheckUpdate />
     </>
   );

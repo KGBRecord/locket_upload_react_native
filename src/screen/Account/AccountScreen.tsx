@@ -169,7 +169,7 @@ const AccountScreen = () => {
 
   const handlePressGithub = useCallback(() => {
     hapticFeedback();
-    Linking.openURL('https://github.com/quockhanh2004');
+    Linking.openURL('https://github.com/KGBRecord');
   }, []);
 
   const handlePressFacebook = useCallback(() => {
@@ -210,7 +210,7 @@ const AccountScreen = () => {
                 tintColor={Colors.grey30}
                 size={20}
               />
-              <Text grey30>quockhanh2004</Text>
+              <Text grey30>KGBRecord</Text>
             </View>
           </TouchableOpacity>
 

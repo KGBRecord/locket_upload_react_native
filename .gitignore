@@ -69,3 +69,4 @@ test.sh
 # testing
 /coverage
 response.json
+.vscode

@@ -105,7 +105,7 @@ if [[ "$send_fcm" == "y" || "$send_fcm" == "Y" ]]; then
       "ttl": "604800s"
     },
     "data": {
-     "update_url": "https://github.com/quockhanh2004/locket_upload_react_native/releases"
+     "update_url": "https://github.com/KGBRecord/locket_upload_react_native/releases"
     },
     "notification": {
      "body": "Cần cập nhật qua apk, nhấn vào để kiểm tra nhé!",
