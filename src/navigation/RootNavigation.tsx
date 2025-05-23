@@ -20,7 +20,6 @@ import AutoCheckUpdate from '../services/AutoCheckUpdate';
 import ChatScreen from '../screen/Chat/ChatScreen';
 import ListChat from '../screen/Chat/ListChatScreen';
 import {OnOpenAppService} from '../services/OnOpenApp';
-import DonateDialog from '../Dialog/DonateDialog';
 import LocalNoti from '../services/LocalNoti';
 
 const Stack = createNativeStackNavigator();
@@ -68,7 +67,6 @@ const RootNavigation = () => {
         {isLoggedIn.user ? <HomeNavigator /> : <AuthNavigator />}
       </NavigationContainer>
       <MessageDialog />
-      {/* <DonateDialog /> */}
       <AutoCheckUpdate />
     </>
   );
